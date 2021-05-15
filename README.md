@@ -24,5 +24,6 @@ The most important script is the train_CLL.py script that contains implementatio
 # Examples
 
 The file run_experiments creates synthetic example for the experiment in the paper. It also runs the real data experiments.
-To run examples on real datasets from the paper; 1. download the datasets, 2. run generate_weak_signals, and 3. use run experiment script in the run_experiments file
+
+To run examples on real datasets from the paper; 1. download the datasets, 2. run generate_weak_signals, and 3. use run_experiment script in the run_experiments file
 
