@@ -78,7 +78,7 @@ def set_up_constraint(weak_signals, error_bounds):
         error_amatrix[i] = (1 - 2 * weak_signal) * active_signal
 
         # error denom to check abstain signals
-        error_denom = np.sum(active_signal, axis=0)
+        error_denom = np.sum(active_signal, axis=0) + 1e-8
         error_amatrix[i] /= error_denom
 
         # constants for error constraints
