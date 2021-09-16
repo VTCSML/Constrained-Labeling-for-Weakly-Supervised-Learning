@@ -34,23 +34,22 @@ def y_gradient(y, constraint_set):
         a_matrix = current_constraint['A']
         bound_loss = current_constraint['bound_loss']
 
-        for i, current_a in enumerate(a_matrix):
+        for i, _ in enumerate(a_matrix):
             constraint = a_matrix[i]
             gradient += 2*constraint * bound_loss[i]
     return gradient
 
 
-def run_constraints(y, rho, constraint_set, iters=300, enable_print=True):
+def run_constraints(y, rho, constraint_set, iters=300, enable_print=False):
     # Run constraints from CLL
 
     constraint_keys = constraint_set['constraints']
     n, k = y.shape
     rho = n
     grad_sum = 0
-    lamdas_sum = 0
 
-    for iter in range(iters):
-        print_constraints = [iter]
+    for iteration in range(iters):
+        print_constraints = [iteration]
         print_builder = "Iteration %d, "
         constraint_viol = []
         viol_text = ''
